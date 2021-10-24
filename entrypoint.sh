@@ -3,5 +3,6 @@ do
   echo "IPv4 is down"
   sleep 2
 done
+echo "Has internet connection"
 
 npm run start
