@@ -4,6 +4,7 @@ import { Client as Discord, Intents } from 'discord.js';
 import { WebServer } from './misc/webserver';
 import { onDiscordMessage } from './misc/discord';
 import { eta } from './misc/queue';
+import path = require('path');
 
 import type { ProxyOptions } from './misc/config';
 import type { Bot, BotOptions } from 'mineflayer';
@@ -56,6 +57,7 @@ export class Proxy {
       case 'auth':
         this.options.mcclient.plugins = this.options.mcclient.plugins ?? {};
         if (!!this.options.antiafk) this.options.mcclient.plugins['afk'] = require('mineflayer-antiafk');
+        if (this.options.mcclient.profilesFolder) this.options.mcclient.profilesFolder = path.resolve(this.options.mcclient.profilesFolder)
         this.conn = new Conn(this.options.mcclient);
         //* load/customize extensions
         this.options.extensions?.reduce((arr, fn) => [...arr, fn(this.conn as Conn)], [] as (void | ((bot: Bot, options: BotOptions) => void))[]).forEach((v) => !!v && this.conn?.bot.loadPlugin(v));
