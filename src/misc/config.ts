@@ -23,7 +23,7 @@ export class BotOptions implements IBotOptions {
   host = '2b2t.org';
   port = 25565;
   version = '1.12.2';
-  profilesFolder = './'
+  profilesFolder = './';
 }
 
 export class ServerOptions implements IServerOptions {
