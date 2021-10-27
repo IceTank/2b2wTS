@@ -21,7 +21,7 @@ try {
   while (!(await checkInternet())) {
     await wait(10)
     failedCount++
-    if (failedCount > 10) {
+    if (failedCount > 5) {
       console.info('Exiting because of to main ping fails')
       process.exit(1)
     }
