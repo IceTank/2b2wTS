@@ -4,9 +4,9 @@ WORKDIR /srv/app
 
 COPY ./src /srv/app/src
 COPY ./svelte ./svelte
-COPY ./*.json .
+COPY ./*.json ./
 COPY ./assets ./assets
-COPY ./*.js .
+COPY ./*.js ./
 
 RUN apk add --no-cache git python3 make;\
 npm install;\
