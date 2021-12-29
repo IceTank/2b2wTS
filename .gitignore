@@ -2,6 +2,7 @@
 
 # minecraft token files
 launcher_accounts.json
+nmp-cache
 
 # config files
 config/*
